@@ -1,0 +1,17 @@
+# Create a Persistent Volume named pv, with access mode ReadWriteMany, storage classname shared, 512MB of storage capacity and the host path /data/config.
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv01 
+spec:
+  capacity:                             # This defines the capacity of PV which I am creating
+    storage: 512Mi                      # This the amount of storage which I am trying to claim
+  accessModes:                          # This will define the rights of
+    - ReadWriteMany
+  storageClassName: shared
+  hostPath:                             # Path to which we are creating the volume
+    path: "/data/config"
+
+
+
+

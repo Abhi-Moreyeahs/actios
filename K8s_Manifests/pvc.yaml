@@ -1,0 +1,12 @@
+# Create a Persistent Volume Claim that requests the Persistent Volume we had created above. The claim should request 256MB. Ensure that the Persistent Volume Claim has the same storageClassName as the persistentVolume you had previously created.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc01
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 256Mi
+  storageClassName: shared

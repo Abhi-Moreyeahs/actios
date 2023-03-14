@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pod-for-limits
+spec:
+  containers:
+    - name: ctr-for-demo-cpu-limit
+      image: nginx
+      resources:
+        limits:
+          cpu: "0.8"
+          memory: "512MiB"
+        requests:
+          cpu: "0.5"
+          memory: "128MiB"
+

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-annotations
+  annotations:
+    unprefixed-annotation: "value"
+    cloudsavvyit.com/prefixed-annotation: "another value"
+spec:
+  containers:
+    - name: web
+      image: nginx
+      # resources:
+        # limits:
+        #   cpu: "500m"
+        #   memory: "128MiB"
+      ports:
+        - name: web
+          containerPort: 80
+          protocol: TCP
+
