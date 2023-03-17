@@ -2,15 +2,15 @@ name: Snyk Scan For Action Repo
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   snyk:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout codes
         uses: actions/checkout@v2
       - name: Install Snyk open-source tool
         run: npm install -g snyk
